@@ -1,0 +1,7 @@
+<h1>Lunches</h1>
+<div id="lunches">
+  <%= form_for(@lunch) do |f| %>
+    <%= f.text_field :place, :placeholder => 'New Place' %>
+    <%= f.submit :value => '+' %>
+  <% end %>
+</div>

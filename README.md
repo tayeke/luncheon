@@ -1,0 +1,4 @@
+- Have ruby 1.9+ 
+- Have Redis
+- Run Migration
+- Go
