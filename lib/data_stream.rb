@@ -2,7 +2,7 @@ class DataStream < Sinatra::Base
 
   get '/stream', :provides => 'text/event-stream' do
     stream :keep_open do |out|
-      redis.subscribe('events', 'out') do |on|
+      REDIS.subscribe('events', 'out') do |on|
         on.message do |channel, msg|
           out << "data: #{msg}\n\n"
         end
@@ -13,10 +13,6 @@ class DataStream < Sinatra::Base
         redis.unsubscribe
       end
     end
-  end
-
-  def redis 
-    @redis ||= Redis.new(:timeout => 0)
   end
 
 end
