@@ -1,4 +1,5 @@
 - Have ruby 1.9+ 
 - Have Redis
+- Bundle Install
 - Run Migration
 - Go
