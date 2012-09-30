@@ -1,5 +1,7 @@
 Luncheon::Application.routes.draw do
   
+  post '/eshq/socket' => "stream#connect", :as => :stream
+
   get '/lunches/template' => "lunches#template", :as => :lunch_template #get lunch underscore template
   resources :lunches
 

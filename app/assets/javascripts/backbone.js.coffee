@@ -8,8 +8,8 @@
   url: '/lunches.json'
   initialize: ->
     #begin listening for changes to models and new models
-    stream = new EventSource '/stream'
-    stream.addEventListener 'message', (e) =>
+    stream = new ESHQ 'lunch-channel'
+    stream.onmessage = (e) =>
       log e
       parsed = JSON.parse(e.data)
       if existing = @.get(parsed.id)
