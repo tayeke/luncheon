@@ -50,8 +50,6 @@ class LunchesController < ApplicationController
 
     respond_to do |format|
       if @lunch.save
-        # publish to everyone
-        redis.publish 'events', @lunch.to_json
         format.html { redirect_to @lunch, notice: 'Lunch was successfully created.' }
         format.json { render json: @lunch, status: :created, location: @lunch }
       else
@@ -68,8 +66,6 @@ class LunchesController < ApplicationController
 
     respond_to do |format|
       if @lunch.update_attributes(params[:lunch])
-        # show everyone a change
-        redis.publish 'events', @lunch.to_json
         format.html { redirect_to @lunch, notice: 'Lunch was successfully updated.' }
         format.json { head :no_content }
       else

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'sinatra', '1.3.3'
+  
+gem 'thin'
 
 # eventsource hq offloads eventsource concurrent connections to ec2
 gem 'eshq'
@@ -15,7 +17,6 @@ end
 
 group :production do 
   gem 'pg'
-  gem 'thin'
 end
 
 # Gems used only for assets and not required
