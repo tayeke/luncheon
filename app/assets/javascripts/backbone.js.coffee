@@ -1,4 +1,4 @@
-#modeks
+#models
 @Lunch = Backbone.Model.extend
   initialize: (lunch) ->
 

@@ -1,6 +1,5 @@
 $ ->
   # init
-
   lunches = new LunchCollection()
   lunchesView = new LunchCollectionView
     collection: lunches
