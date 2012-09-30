@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'sinatra', '1.3.3'
-gem 'thin'
+
+# eventsource hq offloads eventsource concurrent connections to ec2
+gem 'eshq'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,6 +15,7 @@ end
 
 group :production do 
   gem 'pg'
+  gem 'thin'
 end
 
 gem 'redis'

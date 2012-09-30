@@ -6,9 +6,6 @@ Luncheon::Application.routes.draw do
 
   root :to => "main#index"
 
-  require 'data_stream'
-  get '/stream', :to => DataStream
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

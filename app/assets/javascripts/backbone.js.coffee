@@ -10,6 +10,7 @@
     #begin listening for changes to models and new models
     stream = new EventSource '/stream'
     stream.addEventListener 'message', (e) =>
+      log e
       parsed = JSON.parse(e.data)
       if existing = @.get(parsed.id)
         existing.set parsed
