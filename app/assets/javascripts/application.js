@@ -12,4 +12,3 @@
 //
 //= require plugins
 //= require backbone
-//= require_tree .

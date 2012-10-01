@@ -1,0 +1,70 @@
+@import "bourbon"
+
+$break-tablet: 850px
+$break-phone: 500px
+
+h1
+  text-align: center
+  font-size: 2.6em
+  line-height: 1.5em
+
+form
+  input[type='text']
+    width: 96%
+    background-color: rgba(255,255,255,0.2)
+    border: 3px solid #111
+    font:
+      size: 1em
+    margin-bottom: 10px
+    @include border-radius(5px)
+  input[type='submit']
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f5f5f5))
+    background: -moz-linear-gradient(top, #fff, #f5f5f5)
+    background: -o-linear-gradient(top, #fff, #f5f5f5)
+    background-color: #f5f5f5
+    font-family: 'Helvetica', Arial, sans-serif
+    font-size: 12px
+    font-weight: bold
+    line-height: 14px
+    margin-bottom: 18px
+    @include border-radius(5px)
+    width: 25px
+    margin: 0 auto
+    clear: both
+
+  .datetime
+    width: 145px
+    height: 72px
+    margin: 0 auto
+
+  .dk_container
+    width: 58px !important
+    margin: 0 5px 10px 4px
+    .dk_label 
+      width: 58px !important
+    .dk_toggle 
+      width: 47px !important
+      padding: 5px !important
+
+#lunches
+  line-height: 1.2em
+  > ul
+    overflow: hidden
+    .new 
+      text-align: center
+    > li
+      display: block
+      border: 3px solid rgba(0,0,0,0.4)
+      @include border-radius(5px)
+      width: 15%
+      float: left
+      padding: 1%
+      margin: 1%
+      @media screen and (max-width: $break-tablet)
+        width: 26%
+        padding: 1.5%
+        margin: 1.5%
+      @media screen and (max-width: $break-phone)
+        width: 91%
+        padding: 2%
+        margin: 2%

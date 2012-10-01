@@ -9,6 +9,9 @@ $ ->
   lunchForm = $('#new_lunch')
   lunchForm.submit (e) ->
     e.preventDefault()
-    $.post '/lunches', lunchForm.serialize(), ->
-      lunchForm[0].reset()
-    return false
+    unless not $('#lunch_place').val()
+      $.post '/lunches', lunchForm.serialize(), ->
+        lunchForm[0].reset()
+    false
+
+  $('select').dropkick()

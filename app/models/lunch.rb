@@ -1,5 +1,5 @@
 class Lunch < ActiveRecord::Base
-  attr_accessible :place
+  attr_accessible :place, :start_time
   after_save :update_clients
 
   def update_clients
