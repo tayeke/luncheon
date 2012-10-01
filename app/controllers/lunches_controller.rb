@@ -12,7 +12,7 @@ class LunchesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @lunches }
+      format.json { render :json => @lunches.to_json(:include => :people) }
     end
   end
 
@@ -74,6 +74,22 @@ class LunchesController < ApplicationController
       end
     end
   end
+
+  #POST /lunches/1/add
+  def add
+    @lunch = Lunch.find(params[:id])
+    @person = Person.find_or_create_by_fb_id_and_name(params[:user])
+    @lunch.people << @person
+    @lunch.save
+  end
+
+  #POST /lunches/1/remove
+  def remove
+    @lunch = Lunch.find(params[:id])
+    @person = Person.find_by_fb_id(params[:user][:fb_id])
+    @lunch.people.delete(@person)
+    @lunch.save
+  end  
 
   # DELETE /lunches/1
   # DELETE /lunches/1.json

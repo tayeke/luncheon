@@ -3,6 +3,8 @@ Luncheon::Application.routes.draw do
   post '/eshq/socket' => "stream#connect", :as => :stream
 
   get '/lunches/template' => "lunches#template", :as => :lunch_template #get lunch underscore template
+  post '/lunches/:id/add' =>  "lunches#add",      :as => :add_to_lunch      #add user to lunch
+  post '/lunches/:id/remove' => "lunches#remove", :as => :remove_from_lunch      #add user to lunch
   resources :lunches
 
 

@@ -1,2 +1,17 @@
+<div class="creator">
+  <img width="35" src="//graph.facebook.com/<%= creator %>/picture" alt="<%= creator_name %>" /><br />
+</div>
 <h3><%= place %></h3> 
+<p class="name"><%= creator_name %></p>
 <p><%= time_string %></p>
+<ul class="attendees">
+  <% var attending = false %>
+  <% _.each(people, function(person) { %>
+  <% if(window.user_id == person.fb_id){attending = true} %>
+  <li>
+    <img width="50" src="//graph.facebook.com/<%= person.fb_id %>/picture" alt="<%= person.name %>" />
+    <p><%= person.name %><%= (window.user_id == person.fb_id) ? ' - <a title="cancel attendance" class="cancel">X</a>' : '' %></p>
+  </li>
+  <% }); %>
+</ul>
+<% if(!created && !attending) { %><a class="add">+ join</a><% } %>

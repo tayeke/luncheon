@@ -12,7 +12,7 @@ form
   input[type='text']
     width: 96%
     background-color: rgba(255,255,255,0.2)
-    border: 3px solid #111
+    border: 3px solid rgba(0,0,0,0.6)
     font:
       size: 1em
     margin-bottom: 10px
@@ -68,3 +68,38 @@ form
         width: 91%
         padding: 2%
         margin: 2%
+      .creator
+        float: right
+        text-align: left
+        font-size: 0.65em
+        line-height: 1em 
+        img
+          display: block
+          margin: 0 auto
+      .name
+        font-size: 0.5em
+        line-height: 1em
+      .cancel 
+        color: rgba(255,150,150,0.4)
+        &:hover
+          color: red
+      .attendees
+        > li
+          height: 50px
+          position: relative
+          img 
+            float: left
+          p
+            float: left
+            font-size: 0.65em
+            line-height: 1em
+            position: absolute
+            bottom: 0
+            left: 60px
+
+#new_lunch
+  display: none
+
+.login_btn
+  display: block
+  text-align: center
