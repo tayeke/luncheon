@@ -63,7 +63,7 @@
   addAll: (collection) ->
     collection.forEach @.addOne, @
     new_element = $('<li>').addClass('new')
-    $('#lunches ul').prepend new_element
+    $('#lunches > ul').prepend new_element
     $('#new_lunch').appendTo new_element
     # @.$el.isotope
     #   resizable: false
