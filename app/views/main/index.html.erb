@@ -3,7 +3,7 @@
   <%= form_for(@lunch) do |f| %>
     <%= f.text_field :place, :placeholder => 'New Place' %>
     <div class="center datetime">
-    <%= f.datetime_select :start_time, :discard_year => true, :ampm => true, :default => Time.now, :datetime_separator => '<div class="clr"></div>', :use_month_numbers => true, :date_separator => '<div class="left">/</div>', :time_separator => '<div class="left">:</div>' %>
+    <%= f.datetime_select :start_time, :discard_year => true, :ampm => true, :default => Time.zone.now, :datetime_separator => '<div class="clr"></div>', :use_month_numbers => true, :date_separator => '<div class="left">/</div>', :time_separator => '<div class="left">:</div>' %>
     </div>
     <%= f.submit :value => '+' %>
   <% end %>
