@@ -438,3 +438,6 @@ function render(path) {
     });
   });
 })(jQuery, window, document);
+
+//is it chrome?
+window.is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;

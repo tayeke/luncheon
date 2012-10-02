@@ -10,7 +10,8 @@
   "permissions": [
     "http://*/",
     "https://*/",
-    "notifications"
+    "notifications",
+    "background"
   ],
   "web_accessible_resources": [
     "icon.png"

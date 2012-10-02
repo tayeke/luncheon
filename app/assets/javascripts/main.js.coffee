@@ -33,6 +33,9 @@ $ ->
   $('.login_btn').click ->
     FB.login()
 
+  if is_chrome then $('.chrome').removeClass 'hide'
+
+
 #facebook authing stuff
 fbReady = ->
   FB.init

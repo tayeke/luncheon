@@ -1,0 +1,7 @@
+To install Google Chrome Extension follow these simple instructions
+
+- Open Google Chrome
+- Select Chrome/Preferences from the application menu
+- Select extensions from the left side-bar
+- Drag the file extension.crx from this folder into the browser extensions window
+- Accept permissions and you are done
