@@ -50,6 +50,7 @@ class LunchesController < ApplicationController
 
     respond_to do |format|
       if @lunch.save
+        ESHQ.send :channel => "lunch-notifications", :data => {:lunch => @lunch, :type => 'new'}.to_json, :type => "message"
         format.html { redirect_to @lunch, notice: 'Lunch was successfully created.' }
         format.json { render json: @lunch, status: :created, location: @lunch }
       else
@@ -81,6 +82,8 @@ class LunchesController < ApplicationController
     @person = Person.find_or_create_by_fb_id_and_name(params[:user])
     @lunch.people << @person
     @lunch.save
+    ESHQ.send :channel => "lunch-notifications", :data => {:lunch => @lunch, :person => @person, :type => 'add'}.to_json, :type => "message"
+    render :nothing => true
   end
 
   #POST /lunches/1/remove
@@ -89,6 +92,7 @@ class LunchesController < ApplicationController
     @person = Person.find_by_fb_id(params[:user][:fb_id])
     @lunch.people.delete(@person)
     @lunch.save
+    render :nothing => true
   end  
 
   # DELETE /lunches/1

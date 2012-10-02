@@ -1,5 +1,1 @@
-$(function(){
-  $.get('http://localhost:3000/lunches.json', function(resp){
-    alert(resp);
-  });
-});
+chrome.tabs.create({url: 'http://lunch.rh-apps.com/', selected: true});

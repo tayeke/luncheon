@@ -38,6 +38,7 @@
     stream = new ESHQ 'lunch-channel'
     stream.onmessage = (e) =>
       parsed = JSON.parse(e.data)
+      log parsed
       if existing = @.get(parsed.id)
         existing.set parsed
       else
